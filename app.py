@@ -159,7 +159,7 @@ class Search(Resource):
             result = subprocess.Popen([cmd], shell=True)
         json_dict = {}
         json_dict["response"] = "Accepted"
-        return flask.jsonify(json_dict), 202
+        return flask.jsonify(json_dict)
 
     def get(self, file_id):
         cmd = prefix_cmd("sudo cat /data/%s" % file_id)
